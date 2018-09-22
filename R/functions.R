@@ -337,6 +337,17 @@ mean.maxna <- function(x,maxna) {
   } else return(mean(x,na.rm=T))
 }
 
+#' Calculate statistics with maximum amount of NA values specified
+#'
+#' A wrapper statistics functions that returns NA when there are more than maxna NAs in input
+#' @author Lauri Myllyvirta \email{lauri.myllyvirta@@greenpeace.org}
+#' @export
+fun.maxna <- function(x,fun,maxna) {
+  if(sum(is.na(x))>maxna) { return(NA)
+  } else return(fun(x,na.rm=T))
+}
+
+
 #' Specify a transparent color with name and alpha value
 #'
 #' @param colorname A color name recognized by col2rgb
