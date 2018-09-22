@@ -7,6 +7,7 @@ Description: Simple helper functions and variables used as a part of the ChinaAQ
 Depends: R (>= 3.4.3)
 Imports:
     magrittr,
+    tidyr,
     plyr,
     dplyr,
     reshape2,
