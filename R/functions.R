@@ -106,6 +106,19 @@ geocode.loop <- function(locs,repeats=10, source=c("google", "dsk"), ...) {
   return(locs)
 }
 
+#' Order factor levels based on another variable
+#'
+#' Create a factor from a factor or character string, with levels ordered based on another variable.
+#' @param var Factor or character vector with the values of the output factor.
+#' @param by A vector that can be ordered with base::order.
+#' @author Lauri Myllyvirta \email{lauri.myllyvirta@@greenpeace.org}
+#' @export
+orderfactor <- function(var, by) {
+  var = factor(var, levels = var[rev(order(by))])
+}
+
+
+
 #' Get a list of dates, with ability to specify year
 #'
 #' Given a vector of dates or strings convertible to dates with as.Date, return all the dates between the earliest and the latest date in the vector.
