@@ -374,7 +374,7 @@ fun.maxna <- function(x,fun,maxna) {
 col.a <- function(colorname,alpha) {
   require(magrittr)
   colorname %>% col2rgb %>% unlist %>% divide_by(255) -> cn
-  rgb(cn[1],cn[2],cn[3],alpha)
+  rgb(cn[1,],cn[2,],cn[3,],alpha)
 }
 
 #' Cheatsheet for lattice pos argument
